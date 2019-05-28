@@ -17,4 +17,30 @@ export default class InstaService {
     const res = await this.getResource('posts/');
     return res;
   }
+
+  getAllUsers = async () => {
+    const res = await this.getResource('posts/');
+    return res.map(this._transformUsers);
+  }
+
+  _transformUsers = (post) => {
+    return {
+      name: post.name,
+      alt: post.alt,
+      photo: post.photo,
+    }
+  }
+
+  getAllPhotos = async () => {
+    const res = await this.getResource('posts/');
+    return res.map(this._transformPosts);
+  }
+
+  _transformPosts = (post) => {
+    return {
+      src: post.src,
+      alt: post.alt,
+      id: post.id,
+    }
+  }
 }
