@@ -1,3 +1,11 @@
+Для корректной работы необходимо загрузить данные на localhost:3000
+------------
+json-server --watch src/posts.json
+
+Важно, чтобы данные были загружены на localhost:3000, иначе изменить порт в this._apiBase = 'http://localhost:3000/' файла services/instaservice.js
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
