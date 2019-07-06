@@ -7,6 +7,6 @@ const Feed = () => (
     <Posts/>
     <Users/>
   </div>
-)
+);
 
 export default Feed;
