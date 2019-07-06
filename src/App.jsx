@@ -10,7 +10,6 @@ function App() {
       <div className="App">
         <Header/>
         <Route path='/' component={Feed} exact />
-        {/* //exact значит только этот компонент будет на странице */}
         <Route path='/profile' component={Profile} exact /> 
       </div>
     </Router>
