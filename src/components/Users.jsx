@@ -30,7 +30,7 @@ export default class Users extends Component {
   };
 
   render() {
-    const {error, users} = this.state;
+    const { error, users } = this.state;
     if (error) {
       return <ErrorMessage/>
     };
@@ -44,8 +44,9 @@ export default class Users extends Component {
         />
         <div className="users__block">
           {
-            users.map(({ name, altname, photo }) => (
+            users.map(({ alt, name, altname, photo }) => (
               <User 
+                key={ alt }
                 src={ photo }
                 alt={ altname }
                 name={ name } 
