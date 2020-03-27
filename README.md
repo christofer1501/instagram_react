@@ -1,77 +1,79 @@
-Для корректной работы необходимо загрузить данные на localhost:3000
-------------
-json-server --watch src/posts.json
+# Аналог Instagram на React
 
-Важно, чтобы данные были загружены на localhost:3000, иначе изменить порт в this._apiBase = 'http://localhost:3000/' файла services/instaservice.js
+<p align="center">
+  
+  <img src="https://www.pngkey.com/png/detail/1-13336_instagram-png-file-instagram-old-logo-png.png" width="250" alt="Логотип instagram">
+  
+  <br/>
+  <br/>
+  
+  <span>
+    Маленькое приложение состоящее из двух страниц: ленты новостей и главной.
+  </span>
+  
+</p>
 
 
+## Быстрый старт
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### `json-server --watch src/posts.json`
 
-## Available Scripts
+Запускает json-server. Откройте [http://localhost:3100](http://localhost:3100) чтобы увидеть наш `posts.json`.
 
-In the project directory, you can run:
+#### `npm start`
 
-### `npm start`
+Запускает приложение в режиме разработки.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Откройте [http://localhost:3000](http://localhost:3000), чтобы посмотреть его в браузере.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Страница будет перезагружена, если вы внесете изменения.
+Вы также увидите все ошибки в консоли.
 
-### `npm test`
+![Главная страница](https://raw.githubusercontent.com/chrisryana/instagram_react/3535752f3c753b0eea14325dba3280dc3860a2b7/index.png)
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Лента новостей](https://raw.githubusercontent.com/chrisryana/instagram_react/3535752f3c753b0eea14325dba3280dc3860a2b7/feeds.png)
 
-### `npm run build`
+## JSON-Server
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+По умолчанию posts.json загружается на `localhost:3100`. Чтобы изменить порт нужно:
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+1. В файле `json-server.json` изменить `port` на нужный
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![json-server.json](https://raw.githubusercontent.com/chrisryana/instagram_react/da86b511d36b25e93b50861ee1176df23ba9ab5f/jsonConfig.png)
 
-### `npm run eject`
+2. В файле `src/services/instaservice.js` изменить переменную `this._apiBase` в соответствии с `port` в `json-server.json`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![instaservice.js](https://raw.githubusercontent.com/chrisryana/instagram_react/da86b511d36b25e93b50861ee1176df23ba9ab5f/service.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Структура проекта
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+├── src/                       # Исходники
+│   ├── components/            # Компоненты
+│   │   ├── ErrorMessage.jsx   # Сообщение об ошибке
+│   │   ├── Feed.jsx           # Карточка поста
+│   │   ├── Header.jsx         # Шапка сайта
+│   │   ├── Pallete.jsx        # Набор карточек на главной странице пользователя
+│   │   ├── Posts.jsx          # Лента новостей
+│   │   ├── Profile.jsx        # Главная страница
+│   │   ├── Spinner.jsx        # Спиннер
+│   │   ├── User.jsx           # Пользователь
+│   │   └── Users.jsx          # Блок пользователей в ленте новостей
+│   ├── services/              # Сервисы
+│   │   └── instaservice.js    # Сервис для работы с API
+│   ├── App.jsx                # Код приложения
+│   ├── error.png              # Изображение ошибки
+│   ├── index.css              # Стили
+│   ├── index.js               # Корневой файл проекта
+│   ├── logo.svg               # Логотип проекта
+│   ├── posts.json             # Посты пользователей для ленты
+│   └── spinner.gif            # Спиннер для загрузки
+├── .gitignore                 # Список исключённых файлов из Git
+├── README.md                  # Документация проекта
+├── json-server.json           # Конфиг файл для json-server
+└── package.json               # Список модулей и прочей информации
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Данный проект собран с помощью [Create React App](https://github.com/facebook/create-react-app).
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-# my_insta
