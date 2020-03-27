@@ -5,9 +5,9 @@ import Pallete from './Pallete';
 const Profile = () => (
   <div className="container profile">
     <User
-      src="https://pbs.twimg.com/profile_images/2654273615/26f23912924bb6ee9fb46d23b30f2509.jpeg"
-      alt="man"
-      name="some_coolman"
+      src="https://pbs.twimg.com/profile_images/1189975869978300416/HBZhNk27_400x400.jpg"
+      alt="Кристина Фролова"
+      name="_chrisohara_"
     />
     <Pallete/>
   </div>
